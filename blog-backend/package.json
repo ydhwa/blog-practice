@@ -5,7 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "eslint-config-prettier": "^6.11.0",
-    "koa": "^2.13.0"
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.1.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
