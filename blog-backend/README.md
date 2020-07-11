@@ -109,3 +109,32 @@ next 함수를 호출하면 Promise를 반환한다. 이는 Koa가 Express와 �
 ### async/await 사용하기
 
 Koa는 async/await를 정식으로 지원한다.
+
+## nodemon 사용하기
+
+nodemon을 사용하면 코드를 변경할 때마다 서버를 자동으로 재시작해 준다.
+
+```
+yarn add --dev nodemon
+```
+
+`package.json`에 'start', 'start:dev' script를 추가해준다.
+
+```json
+...
+  "scripts": {
+    "start": "node src",
+    "start:dev": "nodemon --watch src/ src/index.js"
+  }
+...
+```
+
+`start` 스크립트에는 서버를 시작하는 명령어를 넣고, `start:dev` 스크립트에는 nodemon을 통해 서버를 실행해 주는 명령어를 넣었다. 여기서 nodemon은 src 디렉터리를 주시하고 있다가 해당 디렉터리 내부의 어떤 파일이 변경되면, 이를 감지하여 src/index.js 파일을 재시작해 준다.
+
+```bash
+# 재시작이 필요하지 않을 때
+yarn start
+
+# 재시작이 필요할 때
+yarn start:dev
+```
