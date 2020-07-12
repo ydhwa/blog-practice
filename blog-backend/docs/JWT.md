@@ -96,6 +96,10 @@ openssl rand -hex 64
 
 ## posts API에 회원 인증 시스템 도입하기
 
+### 스키마 수정하기
+
+Post 스키마 안에 사용자의 id와 username을 전부 넣어 주어야 한다. 이후 posts 컬렉션을 비운다.
+
 ## username/tags로 포스트 필터링하기
 
 ## 정리
