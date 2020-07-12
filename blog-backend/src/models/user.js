@@ -15,6 +15,12 @@ UserSchema.methods.checkPassword = async function (password) {
   const result = await bcrypt.compare(password, this.hashedPassword);
   return result; // true | false
 };
+UserSchema.methods.serialize = function () {
+  // 응답할 데이터에서 hashedPassword 필드 제거
+  const data = this.toJSON();
+  delete data.hashedPassword;
+  return data;
+};
 
 // 스태틱 메서드
 UserSchema.statics.findByUsername = function (username) {
