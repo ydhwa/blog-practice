@@ -175,6 +175,25 @@ MongoDB에서 컬렉션 이름을 만들 때, 권장되는 **컨벤션(conventio
 
 ## 요청 검증
 
+### ObjectId 검증
+
+```javascript
+import mongoose from 'mongoose';
+
+const { objectId } = mongoose.Types;
+ObjectId.isValid(id);
+```
+
+검증을 위해 각 함수 내부에 위 코드를 삽입하면 코드 중복 문제가 생길 것이다. 미들웨어를 만들면 코드를 중복해 넣지 않고 한 번만 구현한 다음 여러 라우트에 쉽게 적용할 수 있다.
+
+### Request body 검증
+
+객체 검증을 위해 각 값을 If문으로 비교하는 방법도 있지만, 여기서는 이를 수월하게 해 주는 라이브러리인 Joi(<https://github.com/hapijs/joi>)를 설치하여 사용할 것이다.
+
+```
+yarn add @hapi/joi
+```
+
 ## 페이지네이션 구현
 
 ## 정리
