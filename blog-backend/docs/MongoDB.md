@@ -92,6 +92,29 @@ bye
 
 ## mongoose의 설치 및 적용
 
+mongoose란 Node.js 환경에서 사용하는 MongoDB 기반 ODM(Object Data Modeling) 라이브러리이다. 이 라이브러리는 데이터베이스 문서들을 자바스크립트 객체처럼 사용할 수 있게 해준다.
+
+```
+yarn add mongoose dotenv
+```
+
+dotenv란 환경변수들을 파일에 넣고 사용할 수 있게 하는 개발 도구이다. mongoose를 사용하여 MongoDB에 접속할 때, 서버에 주소나 계정 및 비밀번호가 필요할 경우도 있는데, 이런 민감하거나 환경별로 달라질 수 있는 값은 코드 안에 직접 작성하지 않고 환경변수로 설정하는 것이 좋다. 프로젝트를 GitHub, GitLab 등의 서비스에 올릴 경우, 환경변수가 들어 있는 파일은 .gitignore 파일에 넣어 제외시켜 주어야 한다.
+
+### .env 환경변수 파일 생성
+
+`.env`
+
+```
+PORT=4000
+MONGO_URI=mongodb://localhost:27017/blog
+```
+
+blog는 사용할 데이터베이스 이름이다. 지정한 데이터베이스가 서버에 없다면 자동으로 만들어 준다.
+
+`src/index.js`에는 dotenv를 불러와서 `config()` 함수를 호출해 준다.
+
+.env 파일은 변경해도 nodemon에서 자동으로 재시작하지 않으므로 직접 재시작해야 한다.
+
 ## esm으로 ES 모듈 import/export 문법 사용하기
 
 ## 데이터베이스의 스키마와 모델
