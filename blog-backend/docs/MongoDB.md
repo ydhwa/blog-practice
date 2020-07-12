@@ -54,6 +54,42 @@ MongoDB에서는 보통 댓글을 포스트 문서 내부에 넣는다. 문서 �
 
 ## MongoDB 서버 준비
 
+<https://www.mongodb.com/try/download/community>
+
+Complete로 설치. MongoDB Compass도 함께 설치.
+
+```bash
+# 설치 확인
+C:\Program Files\MongoDB\Server\4.2\bin>cd "C:\Program Files\MongoDB\Server\4.2\bin"
+
+C:\Program Files\MongoDB\Server\4.2\bin>mongo
+MongoDB shell version v4.2.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b1997b67-b5e3-48c5-b6ef-efe933d0fbf0") }
+MongoDB server version: 4.2.8
+Server has startup warnings:
+2020-07-12T14:35:57.180+0900 I  CONTROL  [initandlisten]
+2020-07-12T14:35:57.180+0900 I  CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2020-07-12T14:35:57.180+0900 I  CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2020-07-12T14:35:57.180+0900 I  CONTROL  [initandlisten]
+---
+Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+and anyone you share the URL with. MongoDB may use this information to make product
+improvements and to suggest MongoDB products and deployment options to you.
+
+To enable free monitoring, run the following command: db.enableFreeMonitoring()
+To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+
+> version()
+4.2.8
+> exit
+bye
+```
+
 ## mongoose의 설치 및 적용
 
 ## esm으로 ES 모듈 import/export 문법 사용하기
