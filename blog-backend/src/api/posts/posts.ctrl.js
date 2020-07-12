@@ -74,14 +74,23 @@ export const write = async (ctx) => {
  */
 export const list = async (ctx) => {
   const page = parseInt(ctx.query.page || '1', 10);
+
   if (page < 1) {
     ctx.status = 400;
     return;
   }
 
+  const { tag, username } = ctx.query;
+  // tag, username 값이 유효하면 객체 안에 넣고, 그렇지 않으면 넣지 않음
+  // 객체 안에 그냥 넣을 경우 요청받을 때 값이 없으면 undefined 값이 들어간다.
+  const query = {
+    ...(username ? { 'user.username': username } : {}),
+    ...(tag ? { tags: tag } : {}),
+  };
+
   try {
     // find() 함수 호출 후 exec()를 붙여 주어야 서버에 쿼리를 요청한다.
-    const posts = await Post.find()
+    const posts = await Post.find(query)
       .sort({ _id: -1 })
       .limit(10)
       .skip((page - 1) * 10)
