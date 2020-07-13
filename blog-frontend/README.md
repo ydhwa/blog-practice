@@ -35,3 +35,11 @@ yarn add styled-components
 ```
 yarn add redux react-redux redux-actions immer redux-devtools-extension
 ```
+
+### VS Code snippet 적용
+<https://snippet-generator.app/>
+
+1. 위 링크에서 스니펫을 만든다.
+2. [파일]-[기본 설정]-[사용자 코드 조각] 에서 스니펫 설정
+
+<https://code.visualstudio.com/docs/editor/userdefinedsnippets> - Snippet에서 사용할 수 있는 동적 값에 대한 참고 링크
