@@ -29,3 +29,9 @@ styled-components를 사용하여 스타일링한다.
 ```
 yarn add styled-components
 ```
+
+### 리덕스 적용
+
+```
+yarn add redux react-redux redux-actions immer redux-devtools-extension
+```
