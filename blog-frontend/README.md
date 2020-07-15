@@ -96,12 +96,18 @@ CRA로 만든 프로젝트에서 프록시를 설정할 때는 package.json 파�
 - Cookie 초기화하는 방법: [개발자 도구]-[Application]-[Cookies]에서 clear 아이콘 클릭
 
 ```
-
+[master 6c08a3b] [blog-frontend] Add header component, save login status in localStorage
 ```
 
-### a
+### 로그아웃 기능 구현
 
-2020-07-
+2020-07-16
+
+- 로그아웃 프로세스
+  1. LOGOUT 액션 디스패치 됨
+  2. 로그아웃 API 호출
+  3. localStorage의 user값 삭제
+  4. 리듀서에서 스토어의 user값 null로 설정
 
 ```
 
