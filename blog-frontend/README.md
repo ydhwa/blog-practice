@@ -113,7 +113,7 @@ CRA로 만든 프로젝트에서 프록시를 설정할 때는 package.json 파�
 [master 7373b63] [blog-frontend] Add logout
 ```
 
-### 글쓰기 기능 - 에디터 UI 구현
+### 글쓰기 기능 - 에디터 구현
 
 2020-07-16 ~ 2020-07-17
 
@@ -121,8 +121,12 @@ CRA로 만든 프로젝트에서 프록시를 설정할 때는 package.json 파�
 yarn add quill
 ```
 
-외부 라이브러리 연동 시 useRef와 useEffect를 적절하게 사용하면 된다. 만약 클래스형 컴포넌트 작성 시 createRef와 componentDidMount를 사용하면 된다.
+- 외부 라이브러리 연동 시 useRef와 useEffect를 적절하게 사용하면 된다. 만약 클래스형 컴포넌트 작성 시 createRef와 componentDidMount를 사용하면 된다.
+- 각 컴포넌트의 역할에 따라 컨테이너 컴포넌트를 따로 만드는 것이 이후 유지보수에 좋다.
+- Quill 에디터는 일반 input이나 textarea가 아니므로 onChange와 value 값을 사용하여 상태를 관리할 수 없다. 따라서 리덕스 스토어에 값을 넣고, 리덕스 스토어의 값이 바뀔 때 에디터 값이 바뀌도록 해야 한다.
+- 사용자가 WritePage에서 벗어난 경우 데이터를 초기화해야 한다. 컴포넌트가 언마운트될 때 useEffect로 INITIALIZE 액션을 발생시켜 리덕스의 write 관련 상태를 초기화해준다.
 
 ```
 [master 9b979f6] [blog-frontend] Add editor UI
+[master 0c0d476] [blog-frontend] Add editor tag UI
 ```
