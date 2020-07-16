@@ -129,4 +129,5 @@ yarn add quill
 ```
 [master 9b979f6] [blog-frontend] Add editor UI
 [master 0c0d476] [blog-frontend] Add editor tag UI
+[master 5b21d70] [blog-frontend] Manage post status with redux
 ```
