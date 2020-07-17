@@ -131,3 +131,14 @@ yarn add quill
 [master 0c0d476] [blog-frontend] Add editor tag UI
 [master 5b21d70] [blog-frontend] Manage post status with redux
 ```
+
+### 포스트 조회 기능 구현
+
+2020-07-17 ~ 2020-07-18
+
+- dangerouslySetInnerHTML: 리액트에서는 HTML을 그대로 렌더링하는 형태로 JSX를 작성하면 HTML 태그가 적용되지 않고 일반 텍스트 형태로 나타난다. 따라서 HTML을 적용하고 싶다면 해당 props를 설정해 주어야 한다.
+- 포스트 페이지를 벗어날 때 데이터를 비우지 않으면, 나중에 사용자가 특정 포스트를 읽은 뒤 목록으로 돌아가서 또 다른 포스트를 읽을 때 아주 짧은 시간 동안 이전에 불러왔던 포스트가 나타나는 깜박임 현상이 발생한다.
+
+```
+
+```
