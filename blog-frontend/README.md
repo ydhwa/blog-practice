@@ -156,10 +156,6 @@ yarn add qs
 
 2020-07-18
 
-```
-
-```
-
 - 컴포넌트를 거쳐서 props를 전달하는 것이 싫다면 고려할 수 있는 방법
   - 상황) PostActionButton 컴포넌트를 PostViewer의 PostHead 하단에서 보여 주어야 하는데, 이 컴포넌트를 PostViewer에서 직접 렌더링하면 PostActionButton에 onEdit, onRemove 등의 props를 전달할 때 무조건 PostViewer를 거쳐서 전달해야 함. 정작 PostViewer 내부에서 사용하지는 않지만 내부 컴포넌트에서 필요하므로 한 번 거쳐서 전달해야 한다.
   1. PostActionButtons의 컨테이너 컴포넌트를 만들고 PostViewer 내부에서 바로 렌더링
@@ -175,4 +171,17 @@ yarn add qs
 
 ```
 [master f7db23c] [blog-frontend] Add update post
+[master cf4d0cf] [blog-frontend] Add remove post
 ```
+
+### react-helmet-async로 meta 태그 설정하기
+
+2020-07-18
+
+구글, 네이버 같은 검색 엔진에서 웹 페이지를 수집할 떄는 meta 태그를 읽는다. 이 meta 태그를 리액트 앱에서 설정하는 방법을 알아보자.
+
+```
+yarn add react-helmet-async
+```
+
+react-helmet-async에서는 더 깊숙한 곳에 위치한 Helmet이 우선권을 차지한다. 예를 들어 App과 WritePage에서 Helmet을 사용할 경우, WritePage는 App 내부에 들어 있기 때문에 WritePage에서 설정하는 title 값이 나타난다.
