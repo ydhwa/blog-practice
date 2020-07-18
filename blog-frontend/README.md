@@ -149,4 +149,30 @@ yarn add qs
 ```
 [master f4b7bca] [blog-frontend] Add post viewer
 [master db49394] [blog-frontend] Add post list(incomplete)
+[master 9c87c30] [blog-frontend] Add pagination
+```
+
+### 포스트 수정/삭제 기능 구현 및 마무리
+
+2020-07-18
+
+```
+
+```
+
+- 컴포넌트를 거쳐서 props를 전달하는 것이 싫다면 고려할 수 있는 방법
+  - 상황) PostActionButton 컴포넌트를 PostViewer의 PostHead 하단에서 보여 주어야 하는데, 이 컴포넌트를 PostViewer에서 직접 렌더링하면 PostActionButton에 onEdit, onRemove 등의 props를 전달할 때 무조건 PostViewer를 거쳐서 전달해야 함. 정작 PostViewer 내부에서 사용하지는 않지만 내부 컴포넌트에서 필요하므로 한 번 거쳐서 전달해야 한다.
+  1. PostActionButtons의 컨테이너 컴포넌트를 만들고 PostViewer 내부에서 바로 렌더링
+  2. props를 JSX 형태로 받아 와서 렌더링
+  ```javascript
+  <PostViewer
+    post={post}
+    loading={loading}
+    error={error}
+    actionButtons={<PostActionButtons onEdit={onEdit} onRemove={onRemove} />}
+  />
+  ```
+
+```
+
 ```
